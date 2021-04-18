@@ -18,17 +18,14 @@ function Agencias() {
   async function atualizarAgencia() {
     try {
       const data = {
-        agencia: agenciaParaEditar.agenciaPadrao
+        agencia: agenciaParaEditar.agenciaPadrao.replace(/[^\d]+/g, '')
       }
-
+      console.log(data);
       await api.put(`api/config/atualizar/${agenciaParaEditar.idconfig}`, data);
-      setEditar(false);
-      let newArr = [...listaAgencias];
-      newArr[indexParaEditar] = agenciaParaEditar;
-
-      setListaAgencias(newArr);
+      setEditar(false);     
+      listar();
     } catch (err) {
-      alert("Erro ao atualizar agencia")
+      alert("Agencia deve conter apenas numeros")
       console.log(err);
     }
   }

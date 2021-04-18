@@ -150,11 +150,11 @@ function People() {
       </div>
       <div className="lista">
         <h2 style={{ marginTop: '10px', marginBottom: '10px' }}>Lista de Usuário</h2>
-        {listaPessoas.length === 1 &&
+        {listaPessoas.length === 0 &&
           <h3>Nenhum usuário cadastrado</h3>
         }
         <ul>
-          {listaPessoas.length !== 1 && listaPessoas.map(pessoas => (
+          {listaPessoas.length !== 0 && listaPessoas.map(pessoas => (
             <li key={pessoas.idCliente}>
               <div className="info-lista">
                 <strong style={{ marginRight: '5px' }}>Nome:</strong>

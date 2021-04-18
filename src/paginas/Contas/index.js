@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import api from '../../servicos/api';
 
 function Contas() {
-  const [listaContas, setListaContas] = useState([{}]);
+  const [listaContas, setListaContas] = useState("");
 
   async function listar() {
     try {
@@ -29,11 +29,11 @@ function Contas() {
         <Link to="/">Voltar</Link>
       </div>
       <div className="lista">
-        {listaContas.length === 1 &&
+        {listaContas.length === 0 &&
           <h3>Nenhuma conta cadastrada</h3>
         }
         <ul>
-          {listaContas.length !== 1 && listaContas.map(conta => (
+          {listaContas.length !== 0 && listaContas.map(conta => (
             <li key={conta.idconta}>
               <div className="info-lista">
                 <strong style={{ marginRight: '5px' }}>Nº conta:</strong>

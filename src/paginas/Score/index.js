@@ -57,11 +57,11 @@ function Score() {
         <Link to="/">Voltar</Link>
       </div>
       <div className="lista">
-        {listaScore.length === 1 &&
+        {listaScore.length === 0 &&
           <h3>Nenhum score cadastrado</h3>
         }
         <ul>
-          {listaScore.length !== 1 && listaScore.map((score, index)=> (
+          {listaScore.length !== 0 && listaScore.map((score, index)=> (
             <li key={score.score}>
               <div className="info-lista">
                 <strong style={{ marginRight: '5px' }}>Score:</strong>
